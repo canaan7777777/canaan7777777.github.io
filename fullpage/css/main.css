@@ -1,0 +1,445 @@
+.zz{
+    text-align: center;
+    font: 50px "Microsoft Yahei";
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+}
+h3{
+    color:black;
+}
+/* 自我介绍 */
+
+
+.grjs-k{
+   width: 80%;
+    height: 100%;
+    margin:0 auto;
+    margin-top:270px;
+}
+.grjs-z{
+    width: 47%;
+    height: 532px;
+    float: left;
+    /*margin-top: 10px;*/
+    /* background: pink; */
+    background-image:url('../images/gr.jpg');
+    background-size: cover;
+    transition: all 0.3s linear;
+}
+.grjs-z:hover{
+    transform: translateY(-10px);
+}
+.grjs-y{
+    width: 49%;
+    height: 532px;
+    float: right;
+    margin-top: 10px;
+    /* background: pink; */
+
+}
+.grjs-y-s{
+    width: 100%;
+    height:220px;
+    /*  background: yellow; */
+    overflow: hidden;
+    margin-top: 20px;
+    text-overflow: ellipsis;
+
+    text-align: justify;
+
+}
+.grjs-y-s h3{
+    font-size: 20px;
+}
+.grjs-y-s p{
+    color: #888888;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.grjs-y-x{
+    width: 100%;
+    height: 330px;
+    text-align: justify;
+    /* background: blue;  */
+    position: relative;
+}
+.grjs-y-x pre{
+    color: #888888;
+    /* 	margin-top: 10px; */
+    font-size: 18px;
+    line-height: 30px;
+    /* overflow: hidden; */
+}
+meter{
+    width:65%;
+    height: 20px;
+    margin-top: 25px;
+
+
+}
+
+meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value {
+    border-radius: 10px;
+    /* background: pink; */
+    /* background-image:-webkit-linear-gradient (-90deg,#fecd22,#fd9415);    */
+    /* background-image:-moz-linear-gradient(-90deg,#fecd22,#fd9415); */
+    /* background: -webkit-linear-gradient(0deg,pink,yellow); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loader-container {
+    height: 6px;
+    width: 80%;
+    position: absolute;
+    display: inline;
+    /*   top: 50%;
+      left: 50%;
+      margin-top: -3px;
+       margin-left: -500px;  */
+    margin-top: 12px;
+    margin-left: 50px;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(left, pink 50%, #b0b0b0 50%);
+    background-image: -moz-linear-gradient(left, #5bd8ff, #ff0000);
+    background-image: -o-linear-gradient(left, #5bd8ff, #ff0000);
+    background-image: -ms-linear-gradient(left, #5bd8ff, #ff0000);
+    background-image: linear-gradient(left, #5bd8ff, #ff0000);
+    box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 3px 0 0 3px;}
+.loader-container:after {
+    content: "";
+    /* display: block;  */
+    display: inline;
+
+    position: absolute; right: 0;
+    top: 50%; width: 1em; height: 1em;
+    border-radius: 50%; margin-top: -0.5em;
+    margin-right: -1em;
+    background-image: -webkit-linear-gradient(top, #b0b0b0, #212121);
+    background-image: -moz-linear-gradient(top, #000000, #212121);
+    background-image: -o-linear-gradient(top, #000000, #212121);
+    background-image: -ms-linear-gradient(top, #000000, #212121);
+    background-image: linear-gradient(top, #000000, #212121);}
+
+.meter {
+    position: absolute;
+    /* top: 0;  */
+    right: 2px;
+    font-size:15px;
+    /*  margin-top: 1px; */
+    color:#b0b0b0;
+    animation: meter 10s linear;
+    text-shadow: 0 -1px 0 #333333;}
+.meter:after {
+    content: "%";
+}
+
+.loader-container.done:after {
+    background: red;
+}
+.run .runner {
+    content: "";
+    position: absolute;
+    /* right: 0;
+    height: 100%;
+     width: 0%;
+*/	   background-color: transparent;
+    background-image: -webkit-linear-gradient(top, #000000, #212121);
+    background-image: -moz-linear-gradient(top, #000000, #212121);
+    background-image: -o-linear-gradient(top, #000000, #212121);
+    background-image: -ms-linear-gradient(top, #000000, #212121);
+    background-image: linear-gradient(top, #000000, #212121);
+    /* animation: loader 10s linear; */
+}
+
+
+
+
+
+/* 设计作品 */
+.zp-k{
+    width: 70%;
+    height: auto;
+    /*  background: blue;  */
+    margin: 0 auto;
+    /*margin-top: 150px;*/
+    overflow: hidden;
+    /* margin-top: 150px; */
+
+}
+.lx-1-1{
+    width: 100%;
+    height:auto;
+    /*  background: pink;  */
+    /* position: absolute;
+    top: 10px; */
+
+    margin: 0 auto;
+    font-size:30px;
+    /*  line-height:60px;  */
+    text-align: center;
+
+
+
+}
+.lx-2-1{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #888888;
+    text-align: center;
+    overflow: : hidden;
+    line-height: 60px;
+    /*  background: green; */
+    /*    line-height:80px;  */
+
+
+}
+.zp-nr{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+}
+.zp-k-1{
+    width: 33.33%;
+    height:330px;
+    float: left;
+    /* background: red;  */
+    /*border: 5px solid #ffe6ff;*/
+    position: relative;
+}
+
+
+/* .zp-nr .zp-k-1:nth-child(1){
+	border: 2px dashed #b0b0b0;
+}
+.zp-nr .zp-k-1:nth-child(3){
+	border: 2px dashed #b0b0b0;
+}
+.zp-nr .zp-k-1:nth-child(5){
+	border: 2px dashed #b0b0b0;
+} */
+.zz2{
+    width:100%;
+    height: 100%;
+    float: left;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: auto;
+    /*display: none;*/
+    /* 	border: 2px dashed #b0b0b0; */
+    /*animation: zzl 0.3s linear;*/
+
+
+}
+/* .zz2:before{
+	content: "";
+	display: block;
+	width: 50%;
+	height: 100%;
+	margin: 0 auto;
+	 margin-top:-2px;
+	background: rgba(255,192,203,0);
+	 border-top:2px solid pink;
+	border-bottom: 3px solid pink;
+} */
+/* .zz2:after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	top:100px;
+
+	 margin-left:-1px;
+	background: rgba(255,192,203,0);
+	 border-right:2px solid pink;
+	  border-left:3px solid pink;
+
+} */
+.zp-k-1:hover .zz2{
+    display: block;
+
+}
+
+
+.zp-k-1 img{
+    width: 100%;
+    height: 100%;
+}
+.zp-k-1-zi{
+    width: 100%;
+    height:40%;
+    /*  background: yellow; */
+}
+.zp-k-1-zi h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+    text-decoration: underline;
+
+}
+.zp-k-1-zi  a:hover{
+    color: #fd00a7;
+    text-decoration: underline;
+}
+.zp-k-1-zi p{
+    color: #888888;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+
+
+
+/* 底部 */
+.lx{
+    width: 100%;
+    height: auto;
+    background:#FC9BAA;
+    /*margin-top: 150px;*/
+    overflow: hidden;
+    /* position: relative; */
+}
+.lx-1{
+    width: 100%;
+    height: auto;
+    /* 	background: blue;
+    */	/* position: absolute;
+	top: 10px; */
+    font-size:30px;
+    line-height:90px;
+    text-align: center;
+}
+
+.lx-2{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #888888;
+    text-align: center;
+    /*   background: green; */
+}
+.lx-3{
+    width: 70%;
+    height: auto;
+    /*   background: blue;  */
+    margin: 0 auto;
+    border: 30px solid #FC9BAA;
+    overflow: hidden;
+}
+.lx-3-z{
+    width: 40%;
+    height: 420px;
+    float: left;
+    background: #FC9BAA
+
+}
+.lx-3-z .z1{
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border: 2px solid #b0b0b0;
+    margin-bottom: 20px;
+    /* transition: all 0.3s linear; */
+
+}
+/* .lx-3-z .z1:hover{
+	box-shadow: 0 14px 20px 8px rgba(0, 0, 0, 0.8) ;
+	transform: translateY(-10px);
+} */
+
+.lx-3-z .z1 h3{
+    font-size: 20px;
+    /* text-align: center; */
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+.lx-3-z .z1 p{
+    color: #888888;
+    margin-top: 10px;
+    font-size: 18px;
+    /* line-height: 30px; */
+    margin-left: 20px;
+}
+
+.lx-3-y1{
+    width: 55%;
+
+    height: 400px;
+    float: right;
+    background: #fff;
+    border: 1px solid #b0b0b0;
+    overflow: hidden;
+    /*  outline: 0; */
+}
+
+textarea::-webkit-input-placeholder {
+    color:#000 !important;
+    font-size: 20px;
+    font-family: "苹方";
+
+}
+
+
+/* 图的动效 */
+
+@keyframes zzl{
+    0%{
+        opacity: 0;
+        /* transform: translateY(0px); */
+    }
+    20%{
+        opacity: 0.2;
+        /* transform: translateY(-20px); */
+    }
+    40%{
+        opacity: 0.4;
+        /* transform: translateY(-40px); */
+    }
+    60%{
+        opacity: 0.6;
+        /* transform: translateY(-60px); */
+    }
+    80%{
+        opacity: 0.8;
+        /* transform: translateY(-80px); */
+    }
+    100%{
+        opacity: 1;
+        /* transform: translateY(-100px); */
+    }
+}
+
+@media screen  and (max-width:768px){
+    .zz-zi h1{
+        font-size: 40px;
+    }
+}
+@media screen  and (min-width:768px) and (max-width:992px){
+
+    .zz-zi h1{
+        font-size: 60px;
+    }
+}

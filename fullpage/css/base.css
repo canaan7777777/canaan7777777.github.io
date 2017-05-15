@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding:0;
+	text-decoration: none;
+	/* 去除图片下划线 */
+	box-sizing: border-box;
+}
+a{
+	color: #000;
+}
+ul,ol{
+    list-style: none;
+}
+li{
+	 list-style: none;
+}
