@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+        background: #fff1fd;
+        display: block;
+        margin:0 auto;
+        }
+        .control{
+            width:300px;
+            height:600px;
+            background: #4b4a4f;
+            float: left;
+        }
+        section{
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        section label{
+            color:#fff;
+            padding:0 20px;
+           line-height: 30px;
+        }
+        select{
+            width: 40%;
+        }
+        input{
+            width: 40%;
+        }
+        input[type=button]{
+            width: 150px;
+            height: 30px;
+            background: #959d97;
+            border: none;
+            border-radius: 5px;
+            margin:20px 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="control">
+    <section>
+        <label for="shape">选择形状</label>
+        <select id="shape">
+            <option value="rect">矩形</option>
+            <option value="line">直线</option>
+            <option value="circlein">内切圆</option>
+            <option value="circleout">外接圆</option>
+            <option value="circlecenter">中心圆</option>
+            <option value="poly">多边形</option>
+            <option value="pen">铅笔</option>
+            <option value="eraser">橡皮</option>
+        </select>
+    </section>
+
+    <section>
+        <label for="color">选择颜色</label>
+        <input type="color" id="color">
+    </section>
+
+    <section>
+        <label for="width">选择线宽</label>
+        <input type="number" id="width" value="2" step="2" min="2" max="20">
+    </section>
+
+    <section>
+        <label for="style">选择方式</label>
+        <select name="" id="style">
+            <option value="stroke">描边</option>
+            <option value="fill">填充</option>
+        </select>
+    </section>
+
+    <section>
+        <label for="side">选择边数</label>
+        <input type="number" id="side" value="3" min="3" max="12">
+    </section>
+
+    <input type="button" value="撤销" id="redo">
+    <input type="button" value="保存" id="save">
+    <input type="button" value="清空" id="clear">
+</div>
+
+
+    <canvas width="500px" height="500px"></canvas>
+
+</body>
+<script src="draw.js"></script>
+<script>
+    var shape=document.querySelector("#shape");
+    var color=document.querySelector("#color");
+    var width=document.querySelector("#width");
+    var style=document.querySelector("#style");
+    var side=document.querySelector("#side");
+    var eraser=document.querySelector("#eraser");
+    var canvas=document.querySelector("canvas");
+    var cobj=canvas.getContext("2d");
+
+//    cobj.strokeRect(100,100,300,300);
+    var data=[];
+
+    //改变的控件
+    var s="rect";
+    shape.onchange=function () {
+        s=this.value;
+    };
+    var c="#000";
+    color.onchange=function () {
+        c=this.value;
+    };
+    var w="2";
+    width.onchange=function () {
+        w=this.value;
+    };
+    var st="stroke";
+    style.onchange=function () {
+        st=this.value;
+    };
+    var si="3";
+    side.onchange=function () {
+        si=this.value;
+    };
+    canvas.onmousedown=function (e) {
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        if(s=="pen"){
+            cobj.beginPath();
+            cobj.moveTo(ox,oy);
+        }
+        var draw=new Draw(cobj,{color:c,width:w,style:st});
+
+        canvas.onmousemove=function (e) {
+            var mx=e.offsetX;
+            var my=e.offsetY;
+
+            if(s!="eraser"){
+                cobj.clearRect(0,0,500,500);
+
+
+              if(data.length!=0){ //如果data存在才执行
+                 cobj.putImageData(data[data.length-1],0,0,0,0,500,500);// 数据名称 放置位置的坐标 从哪开始取 放的东西的位置
+             }
+            }
+            draw[s](ox,oy,mx,my,si);
+
+//      cobj.strokeRect(ox,oy,mx-ox,my-oy);
+        };
+       document.onmouseup=function () {
+            data.push(cobj.getImageData(0,0,500,500));//每画一个形状都添加进去
+            canvas.onmousemove=null;
+            document.onmouseup=null;
+
+        }
+    };
+
+    var redo=document.querySelector("#redo");
+    redo.onclick=function () {
+        if(data.length==0){
+            alert("已经没有了")
+        }
+        cobj.clearRect(0,0,500,500);
+        data.pop(); //减少最后一个
+        if(data.length==0){
+            return;
+        }
+        cobj.putImageData(data[data.length-1],0,0);//把上一个放进来
+    };
+
+    var save=document.querySelector("#save");
+        save.onclick=function () {
+        var r=canvas.toDataURL();
+        location.assign(r);//跳转保存位置
+    };
+
+    var clear=document.querySelector("#clear");
+    clear.onclick=function () {
+        cobj.clearRect(0,0,500,500);
+        data=[];//
+    }
+
+
+
+</script>
+</html>

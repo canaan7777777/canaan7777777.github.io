@@ -1,12 +1,24 @@
+.section1 img{
+    width: 100%;
+    height: 100%;
+    position: relative
+}
 .zz1{
     text-align: center;
     font: 50px "Microsoft Yahei";
     color: #fff;
+    width: 100%;
+    height:140px;
+    /* line-height: 150px; */
+    /* overflow: hidden; */
     background: rgba(0, 0, 0, 0.2);
-    /*position: absolute;*/
-    /*top:40%;*/
-    /*left:40%;*/
-    margin:0 auto;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* margin:0 auto; */
 }
 h3{
     color:black;
@@ -19,10 +31,11 @@ h3{
     height: 100%;
     margin:0 auto;
     margin-top:270px;
+    
 }
 .grjs-z{
     width: 47%;
-    height: 532px;
+    height:532px;
     float: left;
     /*margin-top: 10px;*/
     /* background: pink; */
@@ -110,7 +123,7 @@ meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value {
 .jindu1-k,.jindu2-k,.jindu3-k,.jindu4-k,.jindu5-k{
     width: 70%;
     height: 10px;
-    background: #b0b0b0;
+    background:#504D4D;
     margin: 15px 5px;
     float: left;
     position: relative;
@@ -119,7 +132,7 @@ meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value {
 .jindu1,.jindu2,.jindu3,.jindu4,.jindu5{
     width: 0;
     height:100%;
-    background: green;
+    background:#FA9DE5;
     position: absolute;
     top:0;
     left:0;
@@ -472,13 +485,14 @@ textarea::-webkit-input-placeholder {
 }
 
 @media screen  and (max-width:768px){
-    .zz-zi h1{
-        font-size: 40px;
-    }
+   .headline h1 {
+     font-weight:400;
+     font-size: 30px;
+   }
 }
 @media screen  and (min-width:768px) and (max-width:992px){
-
-    .zz-zi h1{
-        font-size: 60px;
+    .headline h1 {
+      font-size:50px;
+      font-weight: 600;
     }
 }

@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扫雷游戏</title>
+    <style>
+        body{
+            background:url("img/bg3.jpg") center center no-repeat;
+            background-size: 100%;
+        }
+        ul,li{
+            padding:0;
+            margin:0;
+            border:0;
+            list-style: none;
+        }
+        .scene{
+            width: 500px;
+            height: 500px;
+            border-top:1px solid #999;
+            border-left:1px solid #999;
+            margin-left: 13%;
+            margin-top: 6%;
+        }
+        .block{
+            width:49px;
+            height:49px;
+            float: left;
+            background: #9db7b8;
+            border-right:1px solid #999;
+            border-bottom:1px solid #999;
+        }
+        .show{
+            background:url("img/timg.jpg") center center no-repeat;
+            background-size: 100%;
+        }
+        .num{
+            background: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        .flag{
+            background:url("img/u=753012398,3042354072&fm=23&gp=0.jpg") center center no-repeat;
+            background-size: 100%;
+        }
+        .flagnum{
+            width: 100px;
+            height: 100px;
+        }
+
+
+        .mask{
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            background: rgba(0,0,0,1);
+            z-index: 50;
+
+        }
+        .mask h1{
+            display: block;
+            margin:200px auto 40px;
+            color: #1ba08a;
+            width:150px;
+        }
+        .play{
+            width:150px;
+            height:50px;
+            position:absolute;
+            left:0;
+            right:0;
+            margin:auto;
+            text-align: center;
+            line-height: 50px;
+            color: #f1fff6;
+            border-radius: 30px;
+            font-size: 30px;
+            background: #14ee9d;
+            cursor: pointer;
+            transition:all 0.5s;
+        }
+
+        .control {
+            width:400px;
+            height: 200px;
+            position: fixed;
+            right: 8%;
+            top: 12%;
+            background: #6abf96;
+            border-radius: 20px;
+        }
+        time{
+            width:100px;
+            height:50px;
+            background:#9db7b8;
+            display: block;
+            /*margin-bottom:15px;*/
+            margin-top: 40px;
+            margin-left:50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .flagnum{
+            width:100px;
+            height:50px;
+            background:#9db7b8;
+            display: block;
+            /*margin-bottom:15px;*/
+            margin-top: 20px;
+            margin-left: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .restart,.nandu,.phb{
+            width:150px;
+            height:40px;
+
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            background:#9db7b8;
+            cursor: pointer;
+
+        }
+        .restart{
+            position: absolute;
+            right: 50px;
+            top:30px;
+        }
+        /*.nandu{*/
+            /*position: absolute;*/
+            /*right:  50px;*/
+            /*top:80px;*/
+        /*}*/
+        .phb{
+            position: absolute;
+            right:  50px;
+            top:130px;
+        }
+        /*.phb{*/
+            /*position:relative;*/
+            /*height:auto;*/
+        /*}*/
+        .mingci{
+            width:200px;
+            height:100px;
+            position:absolute;
+            top:45px;
+            left:0px;
+            display:none;
+        }
+        .mingci li{
+            width:150px;;
+            height:30px;
+            margin-bottom:5px;
+            background: #68fc17;
+            border-radius: 10px;
+        }
+        .hardbox{
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: absolute;
+            left: 0;
+            top:0;
+            z-index: 40;
+            display: none;
+
+        }
+        .hardbox li{
+            width: 30%;
+            height:80px;
+            margin: 0 auto;
+            color: #fff;
+            background: rgba(58, 204, 191, 0.83);
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            margin-top: 5%;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+        .scene .mask2{
+            width:501px;
+            height:500px;
+            background: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            left: 13.4%;
+            /*top:-1px;*/
+            margin: auto;
+            font-size:70px;
+            text-align: center;
+            font-weight:600;
+            line-height:500px;
+            color: #fff;
+            z-index: 100;
+        }
+    </style>
+    <script src="jQuery.js"></script>
+    <script>
+//        window.onload
+        $(document).ready(function () {
+
+            var timenum=0;
+            var ti;
+
+            $(".play").hover(function () {
+                $(this).css("transform","scale(1.2,1.2)")
+            },function () {
+                $(this).css("transform","scale(1,1)")
+            })
+
+            function jishiqi() {
+                timenum++;
+                $("time span").html(timenum);
+            }
+//              //难度
+            var num=10;
+            var hardnum=10;
+
+            function diffcult() {
+                $(".hardbox").show();
+                $(".hardbox li").click(function () {
+                    $(".hardbox").hide();
+                    hardnum=10+5*$(this).index();
+                    console.log(hardnum);
+                    starts();
+                    ti=setInterval(jishiqi,1000);
+                })
+            }
+
+
+        function starts(){
+            do {
+                $(".scene").empty();
+                for (var i = 0; i < 10; i++) {
+                    for (var j = 0; j < 10; j++) {
+                        var isLei = Math.random() > 0.85;    //概率
+                        //                    console.log(isLei)
+                        $("<div>")
+                                .addClass(function () {
+                                    if (isLei) {
+                                        return "block lei"
+                                    } else {
+                                        return "block";
+                                    }
+                                })
+                                .attr("id", i + "-" + j)     //添加坐标id
+                                .data("pos", {x: i, y: j})      //保存坐标
+                                .mousedown(mousedownEvent)  //添加点击事件
+                                .appendTo(".scene");     //追加元素
+                    }
+                }
+            } while ($(".lei").length !=hardnum);
+        }
+
+
+            //判断鼠标是左击还是右击
+            function mousedownEvent(e) {
+                //e.which 通过which来判断左击和右击，左击为1，右击为3
+                console.log(e)
+                if(e.which==1){
+                    leftclick.call(this)
+                }else{
+                    rightclick.call(this)
+                }
+            }
+
+
+
+            function leftclick() {
+                //如果猜中雷，让所有雷显现，添加show类名
+                if($(this).hasClass("lei")){
+                    $(".lei").addClass("show")
+                    $("<div>").addClass("mask2").html("GAME OVER").appendTo(".scene");
+                    clearInterval(ti);
+                }else{
+                    $(this).addClass("num");
+                    var pos=$(this).data("pos");
+                    var n=0;
+
+
+
+                    //如果猜中雷，让所有雷显现，添加show类名
+                 /*//周围的八个里有几个雷就显示数字几
+                    if($("#"+(pos.x-1)+"-"+(pos.y-1)).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+(pos.x-1)+"-"+pos.y).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+(pos.x-1)+"-"+(pos.y+1)).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+pos.x+"-"+(pos.y-1)).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+pos.x+"-"+(pos.y+1)).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+(pos.x+1)+"-"+(pos.y-1)).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+(pos.x+1)+"-"+pos.y).hasClass("lei")){
+                        n++;
+                    }
+                    if($("#"+(pos.x+1)+"-"+(pos.y+1)).hasClass("lei")){
+                        n++;
+                    }
+                */
+                    for(var i=pos.x-1;i<=pos.x+1;i++){
+                        for(var j=pos.y-1;j<=pos.y+1;j++){
+                            if($("#"+i+"-"+j).hasClass("lei")){
+                                n++
+                            }
+                        }
+                    }
+
+                    $(this).html(n);     //将数字添加进页面 几个雷写进去
+
+                    if(n==0){
+                        for(var i=pos.x-1;i<=pos.x+1;i++){
+                            for(var j=pos.y-1;j<=pos.y+1;j++){
+
+                                var obj=$("#"+i+"-"+j);
+
+                                console.log(obj.length);
+                                if(obj.length==1&&!obj.hasClass("num")){//
+                                    leftclick.call(obj[0]);//
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            function rightclick() {
+//                alert("right")
+            }
+
+            //清除浏览器默认右击事件
+            $(document).on("contextmenu",function (e) {
+                e.preventDefault();
+            })
+
+            var num=10;
+            function rightclick() {
+                //如果已左击，则不允许右击
+                if ($(this).hasClass("num")) {
+                    return;
+                }
+
+                if ($(this).hasClass("num")) {
+                    return;
+                }
+                if ($(this).hasClass("flag")) {
+                    $(this).removeClass("flag")
+                    num++;
+                } else {
+
+                    num--;
+                    if (num < 0) {
+                        num++;
+                        alert("game over");
+                        return;
+                    }
+                    $(this).addClass("flag");
+                    if (num == 0) {
+                        if ($(".flag").filter(".lei").length == num) {
+                            alert("success");
+                        }
+                    }
+
+                }
+                $(".flagnum").html("flag:" + num);
+            }
+
+
+
+
+            $(".play").click(function () {
+                $(".mask").css("display","none");
+                diffcult();
+                t=setInterval(jishiqi,1000);
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //重置
+            $(".restart").click(function () {
+                $(".hardbox").show();
+                timenum=0;
+
+                $("time span").html(timenum);
+                starts();
+                ti=setInterval(jishiqi,1000)
+                num=10;
+                $(".flagnum").html("flag:"+num);
+            })
+
+//            function gameover() {
+//                clearInterval(t);
+//                $(".time").html("00:00");
+//                $(".flagnum").html("flag:"+num1);
+//                a=0;
+//                num=10;
+//            }
+
+
+//        })
+////排行榜
+//function gameover() {
+//    alert(`游戏结束，时间为${timenum}`);
+//    if (bestscor.length < 3 || (bestscor.length >= 3 && timenum < bestscor[2].scor)) {
+//        var player = prompt("qingshuruxingming");
+//        bestscor.push({player, scor: timenum});
+//        bestscor.sort(function (a, b) {
+//            if (a.scor < b.scor) {
+//                return -1;
+//            } else {
+//                return 1;
+//            }
+//        })
+//        if (bestscor.length > 3) {
+//            bestscor.pop();
+//        }
+//        localStorage.bestscor = JSON.stringify(bestscor);
+//    }
+//}
+
+//function reWrite() {
+//    bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+//    console.log(bestscor)
+//    bestscor.forEach(function (v,i) {
+//        mingci[i].innerHTML=`${v.player} ${v.scor}`;
+////                    $(".paihang li").eq(i).html("+v.player+"+":"+"v.scor")
+//    })
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="scene">
+    <div class="mask">
+        <h1>&nbsp;&nbsp;&nbsp;&nbsp;扫雷</h1>
+        <div class="play">START</div>
+    </div>
+    <ul class="hardbox">
+        <h3 style="font-size: 40px;color:#fff;margin-left:42%;">DIFFICULTY</h3>
+        <li class="ge">EASY</li>
+        <li class="middle">MIDDLE</li>
+        <li class="hard">DIFFCULT</li>
+    </ul>
+</div>
+<div class="control">
+    <time><span>0</span> S</time>
+    <div class="flagnum"></div>
+    <div class="restart">重新开始</div>
+    <!--<div class="nandu">难度选择</div>-->
+
+    <div class="phb">
+        排行榜
+        <ul class="mingci">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div></div>
+
+</body>
+</html>

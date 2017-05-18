@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/shange.css">
     <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+
+      <link rel="stylesheet" href="css/style.css">
     <style>
         .section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
-        .section1 { background: url(images/hua.jpg) center center no-repeat;background-size: 100%;}
+        /* .section1 { background: url(images/hua.jpg) center center no-repeat;background-size: 100%;} */
         .section2 { background: #ffe6ff;}
 
         body {
@@ -61,11 +63,12 @@
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
     <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/index.js"></script>
     <script>
 
         $(function(){
             $('#dowebok').fullpage({
-                sectionsColor: ['#1bbc9b', '#ffe6ff', '#FCD3D8','pink', '#FC9BAA'],
+                sectionsColor: ['#ffe6ff', '#ffe6ff', '#FCD3D8','pink', '#FC9BAA','#FC9BAA'],
                 'navigation': true,
                 slidesNavigation:true,
 
@@ -90,11 +93,12 @@
 
 <div id="dowebok">
     <div class="section section1">
-        <div class="zz1">
-            <h3 style="font-size:60px;padding-top: 30px;padding-bottom: 10px;font-weight:500;color:#fff">欢迎来到我的个人主页</h3>
-            <p style="font-size: 35px;padding-bottom: 30px;">WELCOME TO MY HOMEPAGE</p>
-        </div>
-
+    <img src="images/hua.jpg" alt="">
+    <div class="zz1">
+       <div class="type-js headline">
+            <h1 class="text-js">hello, welcome to my homepage</h1>
+       </div>
+   </div>
     </div>
     <div class="section section2">
 
@@ -104,7 +108,7 @@
             <div class="grjs-y col-sm-12 col-xs-12">
                 <div class="grjs-y-s col-sm-12 col-xs-12">
                     <h3>ABOUT ME.</h3>
-                    <p>我叫张智淋，今年20岁，毕业于山西财专，大学专业是网络系统管理。</br>希望岗位是web前端开发，擅长html，css，javascript，jquery。
+                    <p style="color: #CBC9C9;">我叫张智淋，今年20岁，毕业于山西财专，大学专业是网络系统管理。</br>希望岗位是web前端开发，擅长html，css，javascript，jquery。
                         </br>自我评价：本人性格开朗，有热心，工作积极，能吃苦耐劳。
                     </p>
                 </div>
@@ -244,6 +248,8 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <div class="section"></div>
     <div class="section">
         <!-- 底部 -->
         <div class="lx">
