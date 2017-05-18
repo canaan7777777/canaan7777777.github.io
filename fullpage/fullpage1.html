@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>fullPage个人主页</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shange.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <style>
+        .section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+        .section1 { background: url(images/hua.jpg) center center no-repeat;background-size: 100%;}
+        .section2 { background: #ffe6ff;}
+
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 400px;
+            position: relative; transition: all 1s;
+
+        }
+        /*.swiper-slide:hover .zz{*/
+        /*display: :block;*/
+        /*}*/
+        .swiper-slide .zz{
+            width: 100%;
+            height: 100%;
+            background:rgba(0,0,0,0.85);
+            opacity: 0;
+            transition: all .5s;
+
+        }
+        .swiper-slide .zz a{
+            color:deepskyblue;
+            position:absolute;
+            font-size: 20px;
+            left:0;
+            right:0;
+            top:46%;
+            bottom:0;
+            margin:auto;
+        }
+
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script>
+
+        $(function(){
+            $('#dowebok').fullpage({
+                sectionsColor: ['#1bbc9b', '#ffe6ff', '#FCD3D8','pink', '#FC9BAA'],
+                'navigation': true,
+                slidesNavigation:true,
+
+
+                afterLoad:function (an,index) {
+                    if (index == 2) {
+                        $(".jindu1").css("width", "89%");
+                        $(".jindu2").css("width", "95%");
+                        $(".jindu3").css("width", "91%");
+                        $(".jindu4").css("width", "90%");
+                        $(".jindu5").css("width", "90%");
+                    }
+                }
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="dowebok">
+    <div class="section section1">
+        <div class="zz1">
+            <h3 style="font-size:60px;padding-top: 30px;padding-bottom: 10px;font-weight:500;color:#fff">欢迎来到我的个人主页</h3>
+            <p style="font-size: 35px;padding-bottom: 30px;">WELCOME TO MY HOMEPAGE</p>
+        </div>
+
+    </div>
+    <div class="section section2">
+
+        <!-- 自我介绍 -->
+        <div class="grjs-k">
+            <div class="grjs-z col-sm-12 col-xs-12"></div>
+            <div class="grjs-y col-sm-12 col-xs-12">
+                <div class="grjs-y-s col-sm-12 col-xs-12">
+                    <h3>ABOUT ME.</h3>
+                    <p>我叫张智淋，今年20岁，毕业于山西财专，大学专业是网络系统管理。</br>希望岗位是web前端开发，擅长html，css，javascript，jquery。
+                        </br>自我评价：本人性格开朗，有热心，工作积极，能吃苦耐劳。
+                    </p>
+                </div>
+                <div class="grjs-y-x col-sm-12 col-xs-12">
+                    <h3 style="font-size: 20px;margin-bottom: 20px;">MY SKILL</h3>
+                    <!-- <p> sdf sdfv sdv I'm a passionate design er,  cxc scc fsfdf fg sccsipsum dolor  sit  amet,consectetur adipiscing elit, sed do temp exeor incididunt ut labore et sd doloraliquda. dd Idfn 2015, quisxcx xc xcxcxullamco laboris nisi ut aliquip ex ega commodo consequat. Duis aute irure dolor in xc reprehe in fsfdsfsddfsdfddfssdffcsw  wefrger dbrg sgdfdaqr.
+                  </p> -->
+                    <!--  <progress value="" min="0" max="100"></progress> -->
+                    <!--<pre>DESIGN  <meter value="80" min="0" max="100" class=""></meter>   80%</pre>
+                    <pre>HTML    <meter value="70" min="0" max="100"></meter>   70%</pre>
+                    <pre>CSS     <meter value="60" min="0" max="100"></meter>   60%</pre>
+                    <pre>JSP     <meter value="65" min="0" max="100"></meter>   65%</pre>
+                    <pre>PHP     <meter value="75" min="0" max="100"></meter>   75%</pre>-->
+                    <!-- <pre>html<div class="loader-container"> </div></pre> <div class="meter">5</div> -->
+
+                    <div class="jindu-da">
+                        <div class="jindu-zi">html:&nbsp;&nbsp;&nbsp;</div>
+                        <div class="jindu1-k">
+                            <div class="jindu1"></div>
+                        </div>
+                        <div class="jindu-zi">92%</div>
+                    </div>
+
+                    <div class="jindu-da">
+                        <div class="jindu-zi">css:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="jindu2-k">
+                            <div class="jindu2"></div>
+                        </div>
+                        <div class="jindu-zi">95%</div>
+                    </div>
+
+                    <div class="jindu-da">
+                        <div class="jindu-zi">JS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="jindu3-k">
+                            <div class="jindu3"></div>
+                        </div>
+                        <div class="jindu-zi">85%</div>
+                    </div>
+
+                    <div class="jindu-da">
+                        <div class="jindu-zi">Jquery:</div>
+                        <div class="jindu4-k">
+                            <div class="jindu4"></div>
+                        </div>
+                        <div class="jindu-zi">90%</div>
+                    </div>
+
+                    <div class="jindu-da">
+                        <div class="jindu-zi">php:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="jindu5-k">
+                            <div class="jindu5"></div>
+                        </div>
+                        <div class="jindu-zi">80%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="section">
+        <!-- 设计作品 -->
+        <div class="zp-k">
+            <!--<div class="lx-1-1">DESIGN</div>-->
+            <!--<div class="lx-2-1">The works of design</div>-->
+
+            <div class="zp-nr">
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12"><img src="images/jiemain.png" alt=""> <!--<div class="zz2"></div>--> </div>
+
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12">
+                    <div class="zp-k-1-zi">
+                        <a href="images/shanping.jpg"><h3>DESGIN AI</h3></a>
+                        <p>This is work<br>
+                            Here are some simple icons<br>
+                            Comparison of the design <br>of the cartoon
+                            But very distinctive</p>
+                    </div>
+                </div>
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12"><img src="images/ps%20(3).png" alt=""> <!--<div class="zz2"></div>--> </div>
+
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12">
+                    <div class="zp-k-1-zi">
+                        <a href="images/webbaozhuang.jpg"><h3>DESGIN PAGE</h3></a>
+                        <p>This is work<br>
+                            Here are some simple icons<br>
+                            Comparison of the design <br>of the cartoon
+                            But very distinctive</p>
+                    </div>
+                </div>
+
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12"><img src="images/ai%20(2).png" alt=""> <!--<div class="zz2"></div>--> </div>
+                <div class="zp-k-1 col-md-4 col-sm-6 col-xs-12">
+                    <div class="zp-k-1-zi">
+                        <a href="images/shiliang.jpg"><h3>DESGIN PS</h3></a>
+                        <p>This is  work<br>
+                            Here are some simple icons<br>
+                            Comparison of the design <br>of the cartoon
+                            But very distinctive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <h3 style="font-size: 30px">works</h3>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(images/pg.png)">
+                    <div class="zz"><a href="">苹果官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/tmpc.png)">
+                    <div class="zz"><a href="../tianmao/tianmao.html">天猫官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/xm.png)">
+                    <div class="zz"><a href="">小米官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/fk.png)">
+                    <div class="zz"><a href="../fanke/index.html">凡客官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/jindong.png)">
+                    <div class="zz"><a href="">京东官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/shafa.png)">
+                    <div class="zz"><a href="../shafa/index.html">沙发网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/yidong.png)">
+                    <div class="zz"><a href="">中国移动官网</a></div>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/6.png)">
+                    <div class="zz"><a href="../senlinyuzhuang/html/sy.html">森林鱼庄整站</a></div>
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="section">
+        <!-- 底部 -->
+        <div class="lx">
+            <div class="lx-1">GET IN TOUCH</div>
+            <div class="lx-2">Out believe has request not how comfort evident.<br>minutes. Genius has looked</div>
+            <div class="lx-3">
+                <div class="lx-3-z col-xs-12">
+                    <div class="z1">
+                        <h3 style="color:black;">Phone:</h3>
+                        <p>132 0002 3698</p>
+                    </div>
+                    <div class="z1">
+                        <h3 style="color:black;">Email:</h3>
+                        <p>zzyo@foxmail.com</p>
+                    </div>
+                    <div class="z1">
+                        <h3 style="color:black;">Address:</h3>
+                        <p>Shanxi,Taituan</p>
+                    </div>
+                </div>
+
+                <div class="lx-3-y1 col-xs-12">
+                    <textarea name="" id="" cols="100%" rows="100%" placeholder= "Your opinion*"style="resize: none;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+
+
+
+
+
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+        }
+    });
+
+    var swiper=document.querySelectorAll(".swiper-slide");
+    var zz=document.querySelectorAll(".swiper-slide .zz");
+    console.log(swiper,zz);
+    swiper.forEach(function (v,i) {
+
+        v.onmousemove=function () {
+            zz[i].style.opacity=1;
+        };
+        v.onmouseout=function () {
+            zz[i].style.opacity=0;
+        }
+    })
+</script>
+</html>

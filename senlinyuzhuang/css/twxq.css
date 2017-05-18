@@ -1,0 +1,366 @@
+.banner{
+	width: 100%;
+	height: 750px;
+	background: blue;
+
+	position: relative;
+	
+}
+.banner img{
+	width: 100%;
+	height: 100%;
+}
+.banner .banner-tu{
+	width: 100%;
+	height: 750px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: auto;
+
+
+}
+.banner .zz{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 148, 42, 0.21);
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: auto;
+
+	
+	/* float: left; */
+	
+}
+
+.header{
+	width: 100%;
+	height: 100px;
+	background:rgba(58,250,162,0.8); 
+  position: absolute;
+	top: 0;
+	left: 0;
+	margin: auto;
+
+}
+.header-k{
+	width: 1200px;
+	height: 100%;
+	/* background: red; */
+	margin:0 auto;
+}
+.header-k .zi-k{
+	width: 90px;
+	height: 100%;
+	/* background: pink; */
+	
+}
+.header-k .zi-k:nth-child(1){
+	margin-right: 80px;
+	float: left;
+}
+.header-k .zi-k:nth-child(2){
+	margin-right: 80px;
+	float: left;
+}
+.header-k .zi-k:nth-child(3){
+	/* margin-right: 80px; */
+	float: left;
+}
+.header-k .zi-k:nth-child(4){
+	/* margin-right: 80px; */
+	float: left;
+	margin-left: 130px;
+}
+.header-k .zi-k:nth-child(5){
+	margin-left: 80px;
+	float: right;
+}
+.header-k .zi-k:nth-child(6){
+	margin-left: 80px;
+	float: right;
+}
+.header-k .zi-k:nth-child(7){
+	/* margin-left: 80px; */
+	float: right;
+}
+.zi-k h3{
+    font-size: 20px;
+    text-align: center;
+    /* line-height: 60px; */
+    margin-top: 25px;
+}
+.zi-k h3 P{
+    font-size: 16px;
+    text-align: center;
+    /* line-height:40px; */
+      font-weight:500;
+}
+.zi-k .tu{
+	width: 100%;
+	height: 100%;
+   /*  background: blue; */
+   /*  margin: 0 auto; */
+  /*   margin-top:17px ; */
+    background: url('../img/logo.png') center center no-repeat; 
+    background-size: 70%;
+
+}
+
+
+.banner .nr{
+	width: 1200px;
+	height: 650px;
+	/* background: blue; */
+	/* float: left; */
+	position: absolute;
+	top: 100px;
+	left: 0;
+	bottom: 0px;
+	right: 0px;
+	margin: auto;
+	
+}
+.banner .nr .jt-z{
+	width: 50.5px;
+	height: 51px;
+	background: url('../img/lbjty.png');
+	position: absolute;
+	top: 314.5px;
+	left: 0;
+}
+.banner .nr .jt-y{
+	width: 50.5px;
+	height: 51px;
+	background: url('../img/lbjtz.png');
+	position: absolute;
+	top: 314.5px;
+	right: 0;
+}
+.banner .nr .zi{
+	width: 544px;
+	height: 394px;
+	background: url('../img/twlb.png')center center no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 130px;
+	left: 27.5%;
+	margin: auto;
+
+
+}
+.nr ul{
+	width: 20%;
+	height: 7%;
+	/* background: pink; */
+	 position: absolute;
+    bottom: 10px;
+    left: 43.5%;
+    margin: auto;
+}
+.nr ul li{
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #fff;
+	float: left;
+	margin-right:20px;
+}
+/* banner */
+
+/* zhengwen */
+.dakuang{
+	width: 1200px;
+	height:2900px;
+	/* background: green; */
+    /* overflow: hidden; */
+	margin: 0 auto;
+	position: relative;
+	/* margin-top: -126px; */
+}
+.dakuang img{
+	width: 100%;
+	height: 100%;
+}
+.dakuang .xbt{
+	width: 100%;
+	height: 40px;
+	 /* background: blue;  */
+	float: left;
+	margin-top: 50px;
+}
+.dakuang .xbt p{
+	font-family: "苹方";
+	font-size: 20px;
+	color: #0C912E;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.dakuang .nr{
+	width: 100%;
+	height: auto;
+	/* background: yellow; */
+	 float: left; 
+	
+}
+
+.dakuang .nr li{
+	width: 100%;
+	height: 700px;
+	/* border: 2px solid red; */
+	/* background: blue; */
+	margin-top: 150px;
+	position: relative;
+}
+.dakuang .nr li .tu{
+	width: 490px;
+	height: 680px;
+	/* border: 2px solid red; */
+	background: url('../img/twxq_03.png')center center no-repeat;
+    background-size: 100%;
+    float: left;
+}
+.dakuang .nr li .zi{
+	width: 580px;
+	height: 620px;
+	/* border: 2px solid red; */
+	/* background: pink; */
+	float: right;
+	position: absolute;
+	top:20px;
+	right: 30px;
+	margin: auto;
+}
+.dakuang .nr li .zi .bt{
+	width: 124px;
+	height: 65px;
+	
+	background:url("../img/twxq_10.png")center center no-repeat;
+	background-size: 100%;
+}
+.dakuang .nr li .zi p{
+    font-family: "苹方";
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.dakuang .fanye{
+	width: 900px;
+	height: 50px;
+	/* background: blue; */
+	position: absolute;
+	bottom: 60px;
+	left: 12%;
+	margin: auto;
+    text-align: center;
+}
+
+/* dibu */
+.dibu{
+	width: 100%;
+	height: 500px;
+	background: blue;
+	margin-top: 350px;
+	background: url('../img/dibu_02.png') center center no-repeat;
+	/*background-size: 100%;*/
+	position: relative;
+	/* background-size: 100%; */
+}
+.yuer{
+	width: 683px;
+	height: 380px;
+	background: url('../img/yuer_03.png')center center no-repeat;
+	background-size: 80%;
+	position: absolute;
+	top: -210px;
+	right: 0px;
+
+}
+.dibu-k{
+	width: 1200px;
+	height: 100%;
+	/* background: pink; */
+	margin: 0 auto;
+	position: relative;
+}
+.ditu{
+	width:376px;
+	height: 266px;
+	background: url('../img/shouye_54.png')center center no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 70px;
+	left: 30px;
+    margin:auto;  
+}
+.fanhui{
+	width: 55px;
+	height: 51px;
+	background: url('../img/shouye_50.png')center center no-repeat;
+	background-size: 100%;
+	position: absolute;
+	left: 568px;
+	top: -22px;
+	margin: auto;
+}
+.lx{
+	width: 131px;
+	height: 75px;
+	background: url('../img/shouye_62.png') center center no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 160px;
+	left: 512px;
+	margin: auto;
+}
+.lxfs{
+	width: 350px;
+	height: 190px;
+	/* background: green; */
+	position: absolute;
+	top: 110px;
+	left: 770px;
+	margin: auto;
+}
+.lxfs .yx{
+	width:100%;
+	height: 33.3%;
+	/* background: pink; */
+	/* float: left; */
+	
+}
+.lxfs .yx img{
+	float: left;
+	margin-top: 10px;
+}
+.lxfs .yx p{
+	font-family:"微软雅黑";
+   font-size: 14px;
+   color: #fff;
+   line-height: 60px;
+   float: left;
+}
+
+.lxfs .yx1{
+	width:100%;
+	height: 33.3%;
+	/* background: pink; */
+	/* float: left; */
+	
+}
+.lxfs .yx1 img{
+	float: left;
+	margin-top: 20px;
+}
+.lxfs .yx1 p{
+	font-family:"微软雅黑";
+   font-size: 14px;
+   color: #fff;
+   line-height: 60px;
+   float: left;
+}
+
