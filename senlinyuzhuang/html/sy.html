@@ -5,15 +5,16 @@
 	<title>首页</title>
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/sy.css">
+	<script src="../jquery.js"></script>
 </head>
 
 <body>
 <!-- top -->
 <header>
 	<div class="header-k">
-		<div class="zi-k"><a href="dy.html"><h3>关于鱼庄<p>About fish</p></h3></a></div>
-		<div class="zi-k"><a href="twlb.html"><h3>鱼项目庄<p>About fish</p></h3></a></div>
-		<div class="zi-k"><h3>鱼种介绍<p>About fish</p></h3></div>
+		<div class="zi-k"><a href="dy.html" target="view_window"><h3>关于鱼庄<p>About fish</p></h3></a></div>
+		<div class="zi-k"><a href="twlb.html" target="view_window"><h3>鱼项目庄<p>About fish</p></h3></a></div>
+		<div class="zi-k"><a href="wzlb.html" target="view_window"><h3>鱼种介绍<p>About fish</p></h3></a></div>
 		<div class="zi-k"><div class="tu"></div></div>
 		<div class="zi-k"><h3>景点预览<p>About fish</p></h3></div>
 		<div class="zi-k"><h3>游玩攻略<p>About fish</p></h3></div>
@@ -23,6 +24,11 @@
 <!-- top -->
 <!-- banner -->
 <div class="banner">
+	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
+	<div class="banner-tu"><img src="../img/wz.jpg" alt=""></div>
+	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
+	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
+	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
 	<div class="zz"></div>
 	<div class="nr">
 		<div class="jt-z"></div>
@@ -31,7 +37,7 @@
 		<p2>THE GREEN OCEAN &nbsp;&nbsp; OPENING SOON</p2>
 		<p3>和鱼儿享受游弋的乐趣</p3>
 		<ul class="lunbo">
-			<li></li>
+			<li class="active"></li>
 			<li></li>
 			<li></li>
 			<li></li>
@@ -120,4 +126,48 @@
 </div>
 
 </body>
+<script> $(function () {
+                //轮播
+                $(".lunbo li").click(function () {
+                    var index=$(".lunbo li").index(this);
+                    var num=index;
+                    $(".lunbo li").filter(".action").removeClass("action").end().eq(index).addClass("action");
+                    $(".banner-tu").filter(".active").removeClass("active").end().eq(index).addClass("active");
+                });
+
+
+
+               var t=setInterval(move,2000)
+               var num=0;
+               function move(){
+                   num++;
+                   if(num>=$(".banner-tu").length){
+                       num=0;
+                   }
+                   if(num<0){
+                       num=$(".banner-tu").length-1;
+                   }
+                   $(".lunbo li").filter(".action").removeClass("action").end().eq(num).addClass("action");
+                   $(".lunbo li").filter(".active").removeClass("active").end().eq(num).addClass("active");
+               }
+
+
+
+                $(".banner").hover(function () {
+                    clearInterval(t);
+                },function () {
+                    t=setInterval(move,2000)
+                });
+
+                $(".jt-z").click(function () {
+                    num-=2;
+                    move()
+                })
+                $(".jt-y").click(function () {
+                    move()
+                })
+
+
+</script>
+
 </html>

@@ -9,7 +9,7 @@
 <body>
 <div class="banner">
 	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
-	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
+	<div class="banner-tu"><img src="../img/wz.jpg" alt=""></div>
 	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
 	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
 	<div class="banner-tu"><img src="../img/twlb.jpg" alt=""></div>
@@ -43,10 +43,10 @@
 
 
 <div class="dakuang">
-        <div class="xbt"><p><a href="sy.html">首页 </a> < 鱼庄项目</p></div>
+        <div class="xbt"><p><a href="sy.html" target="view_window">首页 </a> < 鱼庄项目</p></div>
 	<!-- <div class="nr"> -->
 		<ul class="nr1">
-			<a href="twxq.html"><li>
+			<a href="twxq.html" target="view_window"><li>
 			<img src="../img/twlb_03.png" alt="">
 			<div class="zz">
 				<h3>01</h3>
@@ -118,4 +118,60 @@
 </div>	
 
 </body>
+<script>
+	var btns = document.querySelectorAll(".banner-tu");
+var cons = document.querySelectorAll(".lunbo li");
+var container = document.querySelector(".banner-main");
+var obj = btns[0];
+var newcons = cons[0];
+var prev = document.querySelector(".jt-z");
+var next = document.querySelector(".jt-y")
+
+Array.from(btns).forEach(function (ele, index) {
+    ele.onmouseover = function () {
+        num = index;
+        obj.style.background = "#5B5E65";
+        newcons.style.zIndex = "1"
+        newcons.style.opacity = "0"
+        btns[index].style.background = "#F1F1F4";
+        cons[index].style.zIndex = "2";
+        cons[index].style.opacity = "1"
+        obj = btns[index]
+        newcons = cons[index];
+    }
+})
+var num = 0;
+var t = setInterval(move, 2000);
+function move() {
+    num++;
+    if (num == btns.length) {
+        num = 0;
+    }
+    if (num == -1) {
+        num = btns.length - 1;
+    }
+    obj.style.background = "#5B5E65";
+    newcons.style.zIndex = "1"
+    newcons.style.opacity = "0"
+    btns[num].style.background = "#F1F1F4";
+    cons[num].style.zIndex = "2";
+    cons[num].style.opacity = "1"
+    obj = btns[num]
+    newcons = cons[num];
+}
+container.onmouseover = function () {
+    clearInterval(t);
+}
+container.onmouseout = function () {
+    t = setInterval(move, 2000)
+}
+next.onclick = function () {
+    move()
+}
+prev.onclick = function () {
+    num -= 2;
+    move();
+}
+
+</script>
 </html>

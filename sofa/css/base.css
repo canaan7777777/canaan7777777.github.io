@@ -1,0 +1,14 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	/* 去除链接下划线 */	
+	outline: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}

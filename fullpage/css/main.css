@@ -1,17 +1,23 @@
 .section1 img{
     width: 100%;
     height: 100%;
-    position: relative
+    /* position: relative; */
+}
+.section4 img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    /* position: relative; */
 }
 .zz1{
     text-align: center;
     font: 50px "Microsoft Yahei";
     color: #fff;
-    width: 100%;
+    width: 110%;
     height:140px;
     /* line-height: 150px; */
-    /* overflow: hidden; */
-    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background: rgba(0,0,0,0.3);
     position: absolute;
     top:0;
     left:0;
@@ -20,6 +26,13 @@
     margin: auto;
     /* margin:0 auto; */
 }
+/* .zz-da{
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;left: 0;
+} */
 h3{
     color:black;
 }
@@ -57,9 +70,10 @@ h3{
 .grjs-y-s{
     width: 100%;
     height:220px;
-    /*  background: yellow; */
+     /* background: rgba(0, 0, 0, 0.2); */
     overflow: hidden;
-    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
     text-overflow: ellipsis;
 
     text-align: justify;
@@ -76,9 +90,10 @@ h3{
 }
 .grjs-y-x{
     width: 100%;
-    height: 330px;
+    height: 270px;
     text-align: justify;
-    /* background: blue;  */
+      /* background: rgba(0, 0, 0, 0.2); */
+      padding-top: 20px;
     position: relative;
 }
 /*
